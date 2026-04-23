@@ -1,0 +1,65 @@
+{
+  "personal": {
+    "name": "Cristian Silva Florez",
+    "title": "DevOps Engineer",
+    "description": "Especialista en infraestructura cloud, automatización y CI/CD con experiencia en Docker, Kubernetes, Terraform y más.",
+    "email": "cajacri@gmail.com",
+    "github": "https://github.com/tuusuario",
+    "linkedin": "https://www.linkedin.com/in/cristian-silva-florez-2973631a5/"
+  },
+  "skills": [
+    {
+      "name": "Docker",
+      "icon": "🐳",
+      "description": "Containerización de aplicaciones"
+    },
+    {
+      "name": "Kubernetes",
+      "icon": "☸️",
+      "description": "Orquestación de contenedores"
+    },
+    {
+      "name": "Terraform",
+      "icon": "🏗️",
+      "description": "Infrastructure as Code"
+    },
+    {
+      "name": "CI/CD",
+      "icon": "⚙️",
+      "description": "Automatización de despliegues"
+    },
+    {
+      "name": "GCP",
+      "icon": "☁️",
+      "description": "Servicios en la nube"
+    },
+    {
+      "name": "Git",
+      "icon": "🔧",
+      "description": "Control de versiones"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Proyecto DevOps 1",
+      "description": "Descripción del primer proyecto de infraestructura automatizada",
+      "technologies": ["Docker", "Kubernetes", "AWS"],
+      "link": "https://github.com/tuusuario/proyecto1",
+      "image": "https://via.placeholder.com/400x250?text=Proyecto+1"
+    },
+    {
+      "title": "Proyecto DevOps 2",
+      "description": "Descripción del segundo proyecto con CI/CD pipeline",
+      "technologies": ["GitLab CI", "Terraform", "Docker"],
+      "link": "https://github.com/tuusuario/proyecto2",
+      "image": "https://via.placeholder.com/400x250?text=Proyecto+2"
+    },
+    {
+      "title": "Proyecto DevOps 3",
+      "description": "Descripción del tercer proyecto de monitoreo e infraestructura",
+      "technologies": ["Prometheus", "Kubernetes", "Helm"],
+      "link": "https://github.com/tuusuario/proyecto3",
+      "image": "https://via.placeholder.com/400x250?text=Proyecto+3"
+    }
+  ]
+}

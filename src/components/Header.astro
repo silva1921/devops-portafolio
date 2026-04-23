@@ -1,0 +1,131 @@
+---
+const portfolio = await import('../data/portfolio.json');
+const { personal } = portfolio;
+---
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="#" class="logo">{personal.name.split(' ')[0]}</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .logo:hover {
+    color: var(--color-accent);
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    background: var(--color-border);
+  }
+
+  @media (max-width: 768px) {
+    .nav ul {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .header-content {
+      padding: 0.8rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav ul {
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+    }
+  }
+</style>

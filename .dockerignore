@@ -1,0 +1,68 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Dependencies
+node_modules
+npm-debug.log
+npm-error.log
+yarn-error.log
+pnpm-error.log
+
+# Development
+.vscode
+.idea
+*.swp
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+*.log
+
+# Astro
+.astro
+dist
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+desktop.ini
+
+# Testing
+coverage
+.nyc_output
+junit.xml
+
+# Build
+build
+out
+
+# Documentation
+docs
+README.md
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# Package managers
+pnpm-lock.yaml
+yarn.lock
+
+# Misc
+.editorconfig
+.prettierrc
+.eslintrc
+CHANGELOG.md
