@@ -3,12 +3,16 @@
 name: Deploy Portafolio DevOps
 
 #Quiene ejecuta laa acción
-run-name: ${{github.actor}} es quien ejecuta el pipeline de despliegue
+run-name: ${{github.actor}} ejecuta Pipeline
 
 # Se ejecuta el pipeline cada vez que se hace un push a las ramas main o dev
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 # EL jobs se ejecuta en un runner de Ubuntu y consta de varios pasos, como hacer checkout del código, configurar Docker
 # Cada jobs se puede ejecutar en un seevidor disitinto
@@ -22,10 +26,17 @@ jobs:
       - run: ls -la
 
       - name: print mesaage
-        run: echo "Ejecutando el job de construcción"
+        run: echo "Ejecutando el job de construcción job 1"
 
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: print mesaage
-        run: echo "Ejecutando el job de construcción"
+        run: echo "Ejecutando el job de construcción JOb 2"
+
+  job3:
+    needs: [jobs1, job2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: print mesaage
+        run: echo "Ejecutando el job de construcción Job 3"
