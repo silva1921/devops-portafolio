@@ -1,0 +1,31 @@
+#Anatomía de un pipeline de GitHub Actions para desplegar un portafolio DevOps
+#Fluo del pipeline
+name: Deploy Portafolio DevOps
+
+#Quiene ejecuta laa acción
+run-name: ${{github.actor}} es quien ejecuta el pipeline de despliegue
+
+# Se ejecuta el pipeline cada vez que se hace un push a las ramas main o dev
+on:
+  push:
+    branches: [main]
+
+# EL jobs se ejecuta en un runner de Ubuntu y consta de varios pasos, como hacer checkout del código, configurar Docker
+# Cada jobs se puede ejecutar en un seevidor disitinto
+jobs:
+  jobs1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - run: ls -la
+
+      - name: print mesaage
+        run: echo "Ejecutando el job de construcción"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print mesaage
+        run: echo "Ejecutando el job de construcción"
