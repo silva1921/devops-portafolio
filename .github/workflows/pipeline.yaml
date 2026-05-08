@@ -21,6 +21,7 @@ on:
 # Cada jobs se puede ejecutar en un seevidor disitinto
 jobs:
   jobs1:
+    environment: desarrollo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,16 +30,18 @@ jobs:
       - run: ls -la
 
       - name: print mesaage
-        run: echo "Hola, ${{vars.NOMBRE}} esta es una variable de entorno"
+        run: echo "Hola, ${{vars.NAME}} esta es una variable de entorno"
 
   job2:
+    needs: job1
+    environment: produccion
     runs-on: ubuntu-latest
     steps:
       - name: print mesaage
-        run: echo "Hola, ${{secrets.SECRET_NAME}} esta es una variable de entorno secreta" > secret.txt
+        run: echo "Hola, ${{vars.NAME}} esta es una variable de entorno secreta"
 
   job3:
-    needs: [jobs1, job2]
+    needs: job2
     runs-on: ubuntu-latest
     steps:
       - name: print mesaage
