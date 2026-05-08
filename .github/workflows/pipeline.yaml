@@ -3,10 +3,11 @@
 name: Deploy Portafolio DevOps
 
 #Quiene ejecuta laa acción
-run-name: ${{github.actor}} ejecuta Pipeline
+run-name: ${{github.actor}}
 
 # Se ejecuta el pipeline cada vez que se hace un push a las ramas main o dev
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -26,7 +27,7 @@ jobs:
       - run: ls -la
 
       - name: print mesaage
-        run: echo "Ejecutando el job de construcción job 1"
+        run: echo "Hola, ${{vars.NOMBRE}}"
 
   job2:
     runs-on: ubuntu-latest
