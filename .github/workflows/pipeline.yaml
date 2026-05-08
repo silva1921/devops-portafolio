@@ -21,11 +21,11 @@ on:
 # Cada jobs se puede ejecutar en un seevidor disitinto
 jobs:
   job1:
-    environment: desarrollo
+    environment: ${{github.ref_name == 'main' && 'produccion' || 'desarrollo'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - run: ls -la
 
@@ -39,10 +39,3 @@ jobs:
     steps:
       - name: print mesaage
         run: echo "Hola, ${{vars.NAME}} esta es una variable de entorno secreta"
-
-  job3:
-    needs: [job1, job2]
-    runs-on: ubuntu-latest
-    steps:
-      - name: print mesaage
-        run: echo "Ejecutando el job de construcción Job 3"
