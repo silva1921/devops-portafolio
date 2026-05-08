@@ -41,7 +41,7 @@ jobs:
         run: echo "Hola, ${{vars.NAME}} esta es una variable de entorno secreta"
 
   job3:
-    needs: job2
+    needs: [job1, job2]
     runs-on: ubuntu-latest
     steps:
       - name: print mesaage
