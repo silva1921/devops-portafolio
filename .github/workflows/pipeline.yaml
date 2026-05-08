@@ -7,6 +7,7 @@ run-name: ${{github.actor}} ejecuta Pipeline
 
 # Se ejecuta el pipeline cada vez que se hace un push a las ramas main o dev
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
