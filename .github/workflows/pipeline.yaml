@@ -20,7 +20,7 @@ on:
 # EL jobs se ejecuta en un runner de Ubuntu y consta de varios pasos, como hacer checkout del código, configurar Docker
 # Cada jobs se puede ejecutar en un seevidor disitinto
 jobs:
-  jobs1:
+  job1:
     environment: desarrollo
     runs-on: ubuntu-latest
     steps:
