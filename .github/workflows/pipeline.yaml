@@ -14,6 +14,8 @@ on:
   pull_request:
     branches:
       - main
+    path:
+      - "**.txt"
 
 # EL jobs se ejecuta en un runner de Ubuntu y consta de varios pasos, como hacer checkout del código, configurar Docker
 # Cada jobs se puede ejecutar en un seevidor disitinto
