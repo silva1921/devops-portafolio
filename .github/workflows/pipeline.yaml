@@ -29,13 +29,13 @@ jobs:
       - run: ls -la
 
       - name: print mesaage
-        run: echo "Hola, ${{vars.NOMBRE}}"
+        run: echo "Hola, ${{vars.NOMBRE}} esta es una variable de entorno"
 
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: print mesaage
-        run: echo "Ejecutando el job de construcción JOb 2"
+        run: echo "Hola, ${{secrets.SECRET_NAME}} esta es una variable de entorno secreta" > secret.txt
 
   job3:
     needs: [jobs1, job2]
